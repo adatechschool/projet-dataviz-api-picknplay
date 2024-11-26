@@ -1,39 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pick'N'Play</title>
-  <script defer src="script.js"></script>
-  <link href="style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="script.js"></script>
 </head>
 <body>
-  <form action="#">
-    <label for="genre">What kind of game do you want to play ?</label>
-    <select name="gameGenre" id="genreSelec">
-      <option>Select a genre</option>
-      <option value="action">Action</option>
-      <option value="indie">Indie</option>
-      <option value="adventure">Advendture</option>
-      <option value="rpg">RPG</option>
-      <option value="strategy">Strategy</option>
-      <option value="shooter">Shooter</option>
-      <option value="casual">Casual</option>
-      <option value="simulation">Simulation</option>
-      <option value="puzzle">Puzzle</option>
-      <option value="arcade">Arcade</option>
-      <option value="platformer">Platformer</option>
-      <option value="racing">Racing</option>
-      <option value="massively-multiplayer">Massively Multiplayer</option>
-      <option value="sports">Sports</option>
-      <option value="fighting">Fighting</option>
-      <option value="family">Family</option>
-      <option value="board-games">Board Games</option>
-      <option value="educational">Educational</option>
-      <option value="card">Card</option>
-    </select>
-    <input type="submit" value="Submit" />
-</form>
-
+    <h1 id="result"></h1>
+    <select id="my-select"></select>
+    <button id="get-game" onclick="getSelectedValue()">Get Selected Value</button>    
 </body>
 </html>
