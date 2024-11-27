@@ -8,10 +8,10 @@ async function fetchGenres()
         const response = await fetch(genresUrl);
         if (!response.ok)
             throw new Error('Failed to fetch genres');
-        const data = await response.json()
+        const data = await response.json();
         data.results.forEach(genre => {
             const option = document.createElement('option');
-            option.value = genre.name.toLowerCase().replace(' ', '-');
+            genre.name === "RPG" ? option.value = "role-playing-games-rpg" : option.value = genre.name.toLowerCase().replace(' ', '-');
             option.textContent = genre.name;
             selectElement.appendChild(option);
         });
