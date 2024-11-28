@@ -62,4 +62,20 @@ document.getElementById('get-game').addEventListener('click', async () => {
     document.getElementById('result').textContent = `Random Game: ${game}`;
 });
 
+//bouton Home
+const gameSection = document.getElementById('gameContainer')
+const homeButton = document.createElement('button')
+homeButton.innerHTML ='Home'
+document.body.appendChild(homeButton)
+
+if (localStorage.getItem('isGameSectionHidden') === 'true') {
+    gameSection.style.display = 'none';
+  }
+
+  homeButton.addEventListener('click', () =>{
+    setTimeout(()=> location.reload(),100)
+    gameSection.style.display = 'none'
+});
+localStorage.setItem('isGameSectionHidden', 'true');
+
 fetchGenres();
