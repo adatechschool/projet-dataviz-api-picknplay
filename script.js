@@ -1,3 +1,12 @@
+const homePage = document.querySelector('.homePage')
+const gameName = document.getElementById('game-name')
+const gameDesc = document.getElementById('game-desc')
+const gameContainer = document.getElementById('gameContainer')
+const gameImg = document.getElementById('gameImg')
+const refresh = document.getElementById('refresh')
+
+const apiKey = '1bfb6535755c4056858d3fe255dbd7dd'
+
 async function fetchGenres()
 {
     const apiKey = '1bfb6535755c4056858d3fe255dbd7dd';
@@ -50,17 +59,38 @@ async function getGameByGenre(genre)
             throw new Error('Error fetching data');
         const data = await response.json();
         console.log(randomPage + " " + randomGame);
-        return (data.results[randomGame].name);
+        return (data.results[randomGame]);
     } catch (error) {
         console.error('Error:', error);
     }
 }
 
-document.getElementById('get-game').addEventListener('click', async () => {
+async function getGameInfo(game){
+    const url = `https://api.rawg.io/api/games/${game}?key=${apiKey}`
+
+    const response = await fetch(url);
+    const data = await response.json();
+    return data
+
+}
+
+async function displayGame(){
     const genre = getSelectedValue();
     const game = await getGameByGenre(genre);
-    document.getElementById('result').textContent = `Random Game: ${game}`;
-});
+    const gameInfo = await getGameInfo(game.slug)
+
+    homePage.style.display ='none';
+    gameContainer.style.display = 'inline-block';
+    refresh.style.display = 'inline-block';
+
+    gameName.textContent = gameInfo.name;
+    gameDesc.innerHTML = `<h3>About the game :</h3> ${gameInfo.description}`;
+    gameImg.setAttribute('src',gameInfo.background_image)
+}
+
+document.getElementById('get-game').addEventListener('click', displayGame)
+
+document.getElementById('refreshBtn').addEventListener('click', displayGame)
 
 //bouton Home
 const gameSection = document.getElementById('gameContainer')

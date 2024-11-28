@@ -44,7 +44,10 @@ label {
   height: 80vh;
   background-color: rgb(43, 43, 43);
   border-radius: 10px;
-  border: solid rgb(43, 43, 43)}
+  border: solid rgb(43, 43, 43);
+
+  color: white;
+  overflow: scroll;}
 
 #gameImg{
   width: 100%;
