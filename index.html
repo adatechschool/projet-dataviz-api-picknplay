@@ -4,24 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script defer src="get_game.js"></script>
     <script defer src="script.js"></script>
+    <script defer src="display_game.js"></script>
+    <script defer src="display_stores.js"></script>
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-<div class="background">
-    <div class="homePage" style="display: inline-block;">
-        <h1 id="result"></h1>
-        <select id="my-select"></select>
-        <button id="get-game" onclick="getSelectedValue()">Get Selected Value</button>    
-    </div>
-    <div id="refresh">
-        <label >Don't like this game ?</label>
-        <button id="refreshBtn">Refresh</button>
-    </div>
+    <div class="background">
     <div id="gameContainer" style="display: none;">
         <img id="gameImg" alt="Image from the game"/>
         <h1 id="game-name">Nom du jeu</h1>
         <p id="game-desc">Description du jeu</p>
+    </div>
+
+    <div class="homePage">
+        <select id="my-select"></select>
+        <button id="get-game" onclick="getSelectedValue()">Get Selected Value</button>
+    </div>
+
+    <div id="refresh">
+        <label>Don't like this game ?</label>
+    </div>
+    <div>
+        <button id="refresh-button">
+            <img id="refresh-icon" src="https://www.freeiconspng.com/thumbs/refresh-icon/refresh-icon-0.png" alt="Refresh">
+        </button>
+    </div>
+
+    <div id="home">
+        <label>Want to change genre ?</label>
+    </div>
+    <div>
+        <button id="home-button">
+            <img id="home-icon" src="https://cdn-icons-png.flaticon.com/512/2484/2484013.png" alt="Home">
+        </button>
+    </div>
+
+    <div id="stores">
+        <label>Interested?</label>
+        <label>Here is where you can buy the game: </label>
+    </div>
+    <div class="stores-icon" id="stores-section">
     </div>
     
 </div>
