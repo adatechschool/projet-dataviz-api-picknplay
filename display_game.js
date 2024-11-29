@@ -1,5 +1,6 @@
 async function getGameInfo(game){
     const url = `https://api.rawg.io/api/games/${game}?key=${apiKey}`
+    //console.log(url);
 
     const response = await fetch(url);
     const data = await response.json();
@@ -7,11 +8,7 @@ async function getGameInfo(game){
 
 }
 
-async function displayGame(){
-    const genre = getSelectedValue();
-    const game = await getGameByGenre(genre);
-    const gameInfo = await getGameInfo(game.slug)
-
+async function displayGame(gameInfo){
     homePage.style.display ='none';
     gameContainer.style.display = 'inline-block';
     refresh.style.display = 'inline-block';

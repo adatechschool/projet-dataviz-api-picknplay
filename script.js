@@ -9,7 +9,8 @@ document.getElementById('get-game').addEventListener('click', async () => {
     document.querySelectorAll('a.store-icon').forEach(button => button.remove());
     const genre = getSelectedValue();
     const game = await getGameByGenre(genre);
-    displayGame();
+    const gameInfo = await getGameInfo(game.slug);
+    displayGame(gameInfo);
     if (game) {
         await getStoresOfGame(game.slug);
     }
@@ -19,10 +20,9 @@ document.getElementById('refresh-button').addEventListener('click', async () => 
     document.querySelectorAll('a.store-icon').forEach(button => button.remove());
     const genre = getSelectedValue();
     const game = await getGameByGenre(genre);
-    displayGame();
+    const gameInfo = await getGameInfo(game.slug);
+    displayGame(gameInfo);
     if (game) {
         await getStoresOfGame(game.slug);
     }
 });
-
-fetchGenres();
