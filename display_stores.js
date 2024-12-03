@@ -15,8 +15,6 @@ async function getStoresOfGame(game) {
             document.querySelector('.store-text1').textContent = "Interested?";
             document.querySelector('.store-text2').textContent = "Here is where you can buy the game: ";
         }
-        console.log(stores);
-
         stores.forEach(({ store }) => {
             const storeButton = document.createElement("a");
             storeButton.href = `https://${store.domain}`;
