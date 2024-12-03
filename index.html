@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pick'n'Play</title>
     <script defer src="get_game.js"></script>
     <script defer src="script.js"></script>
     <script defer src="display_game.js"></script>
@@ -14,15 +14,16 @@
 </head>
 <body>
     <div class="background">
+    <img id="gameImg" alt="Image from the game"style="display:none"/>
     <div id="gameContainer" style="display: none;">
-        <img id="gameImg" alt="Image from the game"/>
         <h1 id="game-name">Nom du jeu</h1>
         <p id="game-desc">Description du jeu</p>
     </div>
 
+    <h1 id="title">Looking for a new game to play ? </br> Just Pick'n'Play</h1>
     <div class="homePage">
         <select id="my-select"></select>
-        <button id="get-game" onclick="getSelectedValue()">Get Selected Value</button>
+        <button id="get-game" onclick="getSelectedValue()">Choose genre</button>
     </div>
 
     <div id="side-bar">
