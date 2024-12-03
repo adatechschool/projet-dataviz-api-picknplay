@@ -7,6 +7,10 @@ body {
   opacity:1;
 }
 
+.homePage {
+  position: fixed;
+  left: 43%;
+}
   
 .background{
   background-color: rgb(99, 98, 98);
@@ -122,20 +126,23 @@ button {
 
 .stores-icon {
   position: absolute;
-  left: 75%;
+  left: 73%;
   top: 52%;
-  display: flex;
-  gap: 8px;
+  gap: 10px;
   align-items: center;
-  width: 50px;
-  height: 50px;
-  margin-right: 20px;
 }
 
 .stores-icon img {
+  display: flex;
   width: 50px;
   height: 50px;
-  margin-right: 20px;
+  margin: 30px;
+}
+
+#stores-container {
+  display: inline-block;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 span {
@@ -149,4 +156,51 @@ span {
 
 #get-game {
   background-color: aliceblue;
+}
+
+#main-score {
+  position: fixed;
+  top: 0%;
+  left: 80%;
+}
+
+#scores-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-left: 70%;
+  margin-top: -27%;
+}
+
+.score-box {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  margin: 20px;
+}
+
+.low {
+  background-color: red;
+}
+
+.medium {
+  background-color: orange;
+}
+
+.high {
+  background-color: green;
+}
+
+.n-a {
+  background-color: gray;
+}
+
+.link-back {
+  background-color: aliceblue;
+  font-weight: bold;
 }
