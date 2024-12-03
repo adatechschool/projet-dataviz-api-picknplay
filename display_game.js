@@ -10,8 +10,10 @@ async function getGameInfo(game){
 
 async function displayGame(gameInfo){
     homePage.style.display ='none';
+    homepageTitle.style.display ='none';
     gameContainer.style.display = 'inline-block';
     refresh.style.display = 'inline-block';
+    gameImg.style.display ='inline-block';
 
     gameName.textContent = gameInfo.name;
     gameDesc.innerHTML = `<h3>About the game :</h3> ${gameInfo.description}`;

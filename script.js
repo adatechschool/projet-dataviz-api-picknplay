@@ -4,6 +4,7 @@ const gameDesc = document.getElementById('game-desc')
 const gameContainer = document.getElementById('gameContainer')
 const gameImg = document.getElementById('gameImg')
 const refresh = document.getElementById('refresh')
+const homepageTitle = document.getElementById('title')
 
 async function displayAll()
 {
