@@ -8,6 +8,14 @@ async function getStoresOfGame(game) {
         if (!response.ok)
             throw new Error('Failed to fetch game');
         const { stores } = await response.json();
+        if (stores.length === 0 ) {
+            document.querySelector('.store-text1').textContent = "Sorry ! Not available in stores";
+            document.querySelector('.store-text2').textContent = "";
+        } else {
+            document.querySelector('.store-text1').textContent = "Interested?";
+            document.querySelector('.store-text2').textContent = "Here is where you can buy the game: ";
+        }
+        console.log(stores);
 
         stores.forEach(({ store }) => {
             const storeButton = document.createElement("a");
