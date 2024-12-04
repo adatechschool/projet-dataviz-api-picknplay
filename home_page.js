@@ -1,4 +1,5 @@
-
+//DOM récupérer les éléments du  html pour les utiliser dans le js
+const storesIcon = document.getElementById('stores-section')
 const sideBar = document.getElementById('side-bar')
 const getGame = document.getElementById('get-game')
 const homeIcon  = document.getElementById('home-icon')
@@ -17,15 +18,17 @@ function displayNone(){
     homeIcon.style.display = 'none'
     refresh.style.display = 'none'
     sideBar.style.display = 'none'
+    storesIcon.style.display = 'none'
 }
 
 function displayBlock(){
     refreshBtn.style.display = 'block'
         Home.style.display = 'block'
-        stores.style.display = 'block'
+        storess.style.display = 'block'
         homeIcon.style.display = 'block'
         refresh.style.display = 'block'
         sideBar.style.display = 'block'
+        storesIcon.style.display = 'block'
 }
 
 
@@ -34,8 +37,7 @@ if (localStorage.getItem('isGameSectionHidden') === 'true') {
   }
 
     
-    homeButton.addEventListener('click', () =>{
-    setTimeout(()=> location.reload(),100)
+    homeButton.addEventListener('click', () =>{ 
     gameSection.style.display = 'none'
     localStorage.setItem('isGameSectionHidden', 'true') 
         
