@@ -252,6 +252,9 @@ span {
 }
 
 .link-back {
-  background-color: aliceblue;
+  background-color: rgb(214, 210, 210);
+  padding:3px;
+  color:black;
+  border-radius: 2px;
   font-weight: bold;
 }
