@@ -6,6 +6,19 @@ const gameImg = document.getElementById('gameImg')
 const refresh = document.getElementById('refresh')
 const homepageTitle = document.getElementById('title')
 
+let displaySidebars = () =>
+{
+    if (gameSection.style.display === 'none') {
+        gameSection.style.display = 'block'
+        localStorage.setItem('isGameSectionHidden' ,'false' )
+         displayBlock()
+    } else {
+        gameSection.style.display = 'none'
+        localStorage.setItem('isGameSectionHidden' ,'true' )
+        displayNone()
+    }
+}
+
 async function displayAll()
 {
     document.querySelectorAll('a.store-icon').forEach(button => button.remove());
@@ -22,6 +35,7 @@ async function displayAll()
 }
 
 document.getElementById('get-game').addEventListener('click', async () => {
+    displaySidebars();
     await displayAll();
 });
 

@@ -1,4 +1,4 @@
-//DOM 
+//DOM
 const storesIcon = document.getElementById('stores-section')
 const sideBar = document.getElementById('side-bar')
 const getGame = document.getElementById('get-game')
@@ -23,43 +23,24 @@ function displayNone(){
 
 function displayBlock(){
     refreshBtn.style.display = 'block'
-        Home.style.display = 'block'
-        stores.style.display = 'block'
-        homeIcon.style.display = 'block'
-        refresh.style.display = 'block'
-        sideBar.style.display = 'block'
-        storesIcon.style.display = 'block'
+    Home.style.display = 'block'
+    stores.style.display = 'block'
+    homeIcon.style.display = 'block'
+    refresh.style.display = 'block'
+    sideBar.style.display = 'block'
+    storesIcon.style.display = 'block'
 }
 
 
 if (localStorage.getItem('isGameSectionHidden') === 'true') {
-        displayNone()
-  }
+    displayNone()
+}
 
     
-    homeButton.addEventListener('click', () =>{ 
-    setTimeout(()=> location.reload(),100) 
+homeButton.addEventListener('click', () =>{ 
+    setTimeout(()=> location.reload(),100)
     gameSection.style.display = 'none'
     localStorage.setItem('isGameSectionHidden', 'true') 
-        
         displayNone()
-
 });
-
-
-getGame.addEventListener('click', () =>{
-    if(gameSection.style.display === 'none'){
-        gameSection.style.display = 'block'
-        localStorage.setItem('isGameSectionHidden' ,'false' )
-
-         displayBlock()
-
-    } else {
-        gameSection.style.display = 'none'
-        localStorage.setItem('isGameSectionHidden' ,'true' )
-            
-        displayNone()
-
-    }
-} )
  
