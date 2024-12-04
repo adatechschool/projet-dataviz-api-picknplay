@@ -1,4 +1,4 @@
-//DOM récupérer les éléments du  html pour les utiliser dans le js
+//DOM 
 const storesIcon = document.getElementById('stores-section')
 const sideBar = document.getElementById('side-bar')
 const getGame = document.getElementById('get-game')
@@ -24,7 +24,7 @@ function displayNone(){
 function displayBlock(){
     refreshBtn.style.display = 'block'
         Home.style.display = 'block'
-        storess.style.display = 'block'
+        stores.style.display = 'block'
         homeIcon.style.display = 'block'
         refresh.style.display = 'block'
         sideBar.style.display = 'block'
@@ -38,6 +38,7 @@ if (localStorage.getItem('isGameSectionHidden') === 'true') {
 
     
     homeButton.addEventListener('click', () =>{ 
+    setTimeout(()=> location.reload(),100) 
     gameSection.style.display = 'none'
     localStorage.setItem('isGameSectionHidden', 'true') 
         
